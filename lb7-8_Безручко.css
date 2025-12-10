@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#pie:checked ~ .wrapper .products-grid .card:not(.type-pie),
+#roll:checked ~ .wrapper .products-grid .card:not(.type-roll),
+#cheesecake:checked ~ .wrapper .products-grid .card:not(.type-cheesecake),
+#pastry:checked ~ .wrapper .products-grid .card:not(.type-pastry),
+#cake:checked ~ .wrapper .products-grid .card:not(.type-cake) {
+  display: none;
+}
+
+#pie:checked ~ .wrapper .filter-btn[for="pie"],
+#roll:checked ~ .wrapper .filter-btn[for="roll"],
+#cheesecake:checked ~ .wrapper .filter-btn[for="cheesecake"],
+#pastry:checked ~ .wrapper .filter-btn[for="pastry"],
+#cake:checked ~ .wrapper .filter-btn[for="cake"],
+#all:checked ~ .wrapper .filter-btn[for="all"] {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+}
+
+.site-header h1 span {
+  color: #e91e63;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.calorie-filter {
+  display: none;
+}
+
+.category-filter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #e0e0e0;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+}
+
+.products-grid {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-content {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.card-footer {
+  padding: 10px 15px;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.site-footer {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+  background: #333;
+  color: #fff;
+}
+
+.copyright {
+  display: none;
+}
+
+@media (min-width: 730px) {
+  .wrapper {
+    display: flex;
+    max-width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+  }
+
+  .category-filter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .filter-btn {
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 3px;
+    background: #e0e0e0;
+  }
+
+  .calorie-filter {
+    display: none;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .site-footer {
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+    color: #000;
+    border-top: 1px solid #ccc;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 1200px;
+    display: flex;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .site-header {
+    padding: 40px 0;
+  }
+
+  .site-header h1 {
+    font-size: 3em;
+  }
+
+  .content-area {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .sidebar {
+    order: 2;
+    width: auto;
+    padding: 20px;
+    background: #fdfdfd;
+    height: fit-content;
+  }
+
+  .category-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-btn {
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+
+  .calorie-filter {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .slider-mockup {
+    height: 4px;
+    background: #ccc;
+    position: relative;
+    margin: 15px 0;
+  }
+  .thumb {
+    width: 15px;
+    height: 15px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+  }
+  .thumb.left {
+    left: 0;
+  }
+  .thumb.right {
+    left: 40%;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    height: 100%;
+  }
+
+  .site-footer {
+    padding: 20px 40px;
+    border-top: none;
+    background: #fff;
+    color: #666;
+  }
+
+  .copyright {
+    display: block;
+  }
+}
